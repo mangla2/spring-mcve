@@ -1,9 +1,6 @@
 package org.company.service.controller;
 
 import javax.xml.ws.Response;
-import javax.ws.rs.*;
-import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
 
 @Path("/v1")
 @Produces({ MediaType.APPLICATION_JSON })
