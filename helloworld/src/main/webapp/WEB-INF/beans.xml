@@ -11,11 +11,14 @@
 	<import resource="classpath:META-INF/cxf/cxf.xml" />
 	<import resource="classpath:META-INF/cxf/cxf-servlet.xml" />
 
-	<context:component-scan base-package="com.deo.dream.ws" />
+	<context:component-scan base-package="org.company.service" />
+	<bean id="helloWorldService"
+		  class="org.company.service.impl.HelloWorldServiceImpl" />
+	<bean class="org.company.service.filter.AuthTokenFilter" lazy-init="true" />
 
 	<jaxrs:server id="restContainer" address="/">
 		<jaxrs:serviceBeans>
-			<ref bean="probablyPrimeService" />
+			<ref bean="helloWorldService" />
 		</jaxrs:serviceBeans>
 	</jaxrs:server>
 </beans>
