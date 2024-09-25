@@ -24,7 +24,6 @@
 			<artifactId>spring-context</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
-
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-web</artifactId>
@@ -32,7 +31,7 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
-			<artifactId>spring-expression</artifactId>
+			<artifactId>spring-aspects</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
 		<dependency>
@@ -44,11 +43,6 @@
 			<groupId>org.aspectj</groupId>
 			<artifactId>aspectjrt</artifactId>
 			<version>${aspectj.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>servlet-api</artifactId>
-			<version>3.0.1</version>
 		</dependency>
 		<dependency>
 			<groupId>commons-codec</groupId>
@@ -82,4 +76,18 @@
 			</plugin>
 		</plugins>
 	</build>
+
+	<distributionManagement>
+		<!--Artifactory Repo-->
+		<repository>
+			<id>af-release</id>
+			<!--suppress UnresolvedMavenProperty -->
+			<url>${env.REPOSOLNS_MVN_REPO}</url>
+		</repository>
+		<snapshotRepository>
+			<id>af-snapshot</id>
+			<!--suppress UnresolvedMavenProperty -->
+			<url>${env.REPOSOLNS_MVN_SNAPSHOT_REPO}</url>
+		</snapshotRepository>
+	</distributionManagement>
 </project>
